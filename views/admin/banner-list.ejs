@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include layout/header.ejs %>
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+  <div class="wrapper">
+    <%- include layout/navigation.ejs %>
+    <%- include layout/sidebar.ejs %>
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <!-- Main content -->
+      <section class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-header">
+                  <h3 class="card-title">Banner List</h3>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                  <table id="listing" class="table table-bordered table-striped">
+                    <thead>
+                      <tr>
+                        <th>Banner Name</th>
+                        <th>Image</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <!-- Disply Banner listing-->
+                      <% if (banners.length > 0) {  %>
+                      <% banners.forEach(banner => { %>
+                      <tr>
+                        <td><%= banner.title %></td>
+                        <td><img src="/uploads/<%= banner.image %>" style="height: 80px; width: 80px;"
+                            alt="<%= banner.title %>">
+                        </td>
+                        <td>
+                          <a href="/banner/statusupdate/<%=banner._id%>/<%=banner.status%>"
+                            class="btn <%- (banner.status == true) ? 'btn-success' : 'btn-danger' %> btn-sm"
+                            style="color: #fff;">Active</a>
+                        </td>
+                        <td width="30%">
+                          <div class="timeline-footer" style="color: #fff;">
+                            <a href="/banner/edit/<%=banner._id%>" class="btn btn-primary btn-sm"><i class="fas fa-edit"
+                                title="edit"></i> Edit</a>
+                            <a href="/banner/delete/<%=banner._id%>" class="btn btn-danger btn-sm"><i
+                                class="fas fa-trash" title="Delete"></i> Delete</a>
+                          </div>
+                        </td>
+                      </tr>
+                      <% }); %>
+                      <% } %>
+                    </tbody>
+                  </table>
+                </div>
+                <!-- /.card-body -->
+              </div>
+              <!-- /.card -->
+            </div>
+            <!-- /.col -->
+          </div>
+      </section>
+      <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+    <%- include layout/footer.ejs %>
+  </div>
+  <!-- ./wrapper -->
+  <%- include layout/js.ejs %>
+</body>
+
+</html>

@@ -1,0 +1,100 @@
+<!-- Main Sidebar Container -->
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+  <!-- Brand Logo -->
+  <a href="/" class="brand-link">
+    <img src="/assets/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+      style="opacity: .8">
+    <span class="brand-text font-weight-light">Node Js</span>
+  </a>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <!-- Sidebar Menu -->
+    <nav class="mt-2">
+      <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+        <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+        <li class="nav-item has-treeview menu-open">
+          <a href="/" class="nav-link <%=(tab=='dashboard') ? 'active' : '' %>">
+            <i class="nav-icon fas fa-tachometer-alt"></i>
+            <p>
+              Dashboard
+              <i class="right fas"></i>
+            </p>
+          </a>
+        </li>
+        <li class="nav-item has-treeview <%=(tab=='category') ? 'menu-open' : '' %>">
+          <a href="#" class="nav-link <%=(tab=='category') ? 'active' : '' %>">
+            <i class="nav-icon fas fa-table"></i>
+            <p>
+              Category Management
+              <i class="fas fa-angle-left right"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="/category/add" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Add Category</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="/category/list" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Category List</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item has-treeview <%=(tab=='product') ? 'menu-open' : '' %>">
+          <a href="#" class="nav-link <%=(tab=='product') ? 'active' : '' %>">
+            <i class="nav-icon fas fa-table"></i>
+            <p>
+              Catalog Management
+              <i class="fas fa-angle-left right"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="/product/add" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Add Product</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="/product/list" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Product List</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item has-treeview <%=(tab=='banner') ? 'menu-open' : '' %>">
+          <a href="#" class="nav-link <%=(tab=='banner') ? 'active' : '' %>">
+            <i class="nav-icon fas fa-table"></i>
+            <p>
+              Banner Management
+              <i class="fas fa-angle-left right"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="/banner/add" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Add Banner</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="/banner/list" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Banner List</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <!-- /.sidebar-menu -->
+  </div>
+  <!-- /.sidebar -->
+</aside>
